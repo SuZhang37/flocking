@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D6F9E897B841772ADED0E749E657D915F48941E2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7E1775FFDCBC8B0197DF349B3BFA6CFC2CB3313F" : 9223372036854775807,
+    "D6F9E897B841772ADED0E749E657D915F48941E2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "82357F34-33FD-4DEA-AF1E-9574981F8EF3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7E1775FFDCBC8B0197DF349B3BFA6CFC2CB3313F" : "",
+    "D6F9E897B841772ADED0E749E657D915F48941E2" : "week5-flocking\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "week5-flocking",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "week5-flocking.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SuZhang37\/OF.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E1775FFDCBC8B0197DF349B3BFA6CFC2CB3313F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SuZhang37\/flocking.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D6F9E897B841772ADED0E749E657D915F48941E2"
+    }
+  ]
+}

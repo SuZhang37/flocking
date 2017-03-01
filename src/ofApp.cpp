@@ -5,7 +5,7 @@ using namespace std;		// this is so we can use cout
 
 #define MAX_AGENTS 100		// how many agents we can have max
 agent Agents[MAX_AGENTS];	// storage (memory) space for all the unique details of every agent
-ofFbo fbo;
+
 
 // constructor
 agent::agent(){
@@ -58,6 +58,9 @@ void agent::update(agent *arr){  // influence the main vector
     
     location += velDir;	// move to current location
     
+    if(ofGetMousePressed()){
+        location -= velDir;
+    }
 }
 
 void agent::draw(){
@@ -218,10 +221,7 @@ void ofApp::setup(){
         
     }
     
-    //    fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA32F);
-    //    fbo.begin();
-    //    ofClear(255,255,255, 0);
-    //    fbo.end();
+
 }
 
 //--------------------------------------------------------------
@@ -233,10 +233,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-    //        fbo.begin();
-    //        ofSetColor(30,30,30,10);
-    //        ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     
     int alpha = 150;
     
@@ -255,8 +251,13 @@ void ofApp::draw(){
             ofSetColor(inbetween);
             Agents[i].draw();
             
-        } else {
+        } else if(ofGetKeyPressed()){
             ofSetColor(inbetween2);
+            Agents[i].draw();
+        }
+        
+        if(ofGetMousePressed()){
+            ofSetColor(221,126,152);
             Agents[i].draw();
         }
         
@@ -266,11 +267,6 @@ void ofApp::draw(){
         ofDrawCircle(ballx, bally, 10);
     }
     
-    
-    
-    //    fbo.end();
-    //    ofSetColor(255,255,255);
-    //    fbo.draw(0,0);
     
 }
 
