@@ -13,7 +13,7 @@ agent::agent(){
     velDir.rotate(ofRandom(360));		// init random direction
     
     mouse.set(0,0);
-    gravity.set(0,1);
+
 }
 
 // update all variables in an agent
@@ -33,7 +33,9 @@ void agent::update(agent *arr){  // influence the main vector
      }
      */
     
-    mouse += gravity*.06;
+ 
+    float mouseGravity = velDir.angle(mouse - location);
+    velDir.rotate(mouseGravity*.06);
     
     
     // For agents nearby, get centroid, head that way
@@ -58,10 +60,11 @@ void agent::update(agent *arr){  // influence the main vector
     
     location += velDir;	// move to current location
     
-    if(ofGetMousePressed()){
-        location -= velDir;
-    }
+    
+
+
 }
+
 
 void agent::draw(){
     if (!active)  		// if not active, do nothing
@@ -112,9 +115,8 @@ void agent::draw(){
     ofSetLineWidth(1);
     
     ofSetColor(225,20,0);
-    if(!ofGetMousePressed()){
-        ofDrawCircle(mouse, 10);
-    }
+    ofDrawCircle(mouse, 10);
+    
     
 }
 
@@ -251,7 +253,7 @@ void ofApp::draw(){
             ofSetColor(inbetween);
             Agents[i].draw();
             
-        } else if(ofGetKeyPressed()){
+        } else {
             ofSetColor(inbetween2);
             Agents[i].draw();
         }
@@ -293,14 +295,16 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    Agents[curAgent].start(x, y);
+    for(curAgent=0; curAgent<MAX_AGENTS; curAgent++ ){
+       Agents[curAgent].start(ofRandom(0, ofGetWindowWidth()), ofRandom(0, ofGetWindowHeight()));
+    }
+    
     curAgent++;
     
     if (curAgent >= MAX_AGENTS) {  // make sure it does not go over
         curAgent = 0;
     }
-    ballx=ofRandom(0,ofGetWindowWidth());
-    bally=ofRandom(0,ofGetWindowHeight());
+   
     
     
 }

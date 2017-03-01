@@ -44,7 +44,7 @@ private:
     ofVec2f location;
     ofVec2f velDir; // velocity & direction for each step
     ofVec2f mouse;  //
-    ofVec2f gravity;
+    //ofVec2f mouseGravity;
     
     bool active = false;	// if this agent is active
     
